@@ -7,8 +7,8 @@ int n, m;
 int board[501][501];
 
 int answer();
-int do1();
-int do2();
+int do1();	// 1 x 4 & 4 x 1 
+int do2();	// 2 x 3 & 3 x 2
 
 int main() {
 	scanf("%d %d", &n, &m);
@@ -26,7 +26,7 @@ int answer() {
 
 int do1() {
 	int ans = 0;
-	for (int i = 0; i < n; ++i) {
+	for (int i = 0; i < n; ++i) {	// 1 x 4
 		for (int j = 0; j <= m - 4; ++j) {
 			int sum = 0;
 			for (int k = j; k < j + 4; ++k) {
@@ -35,7 +35,7 @@ int do1() {
 			ans = max(ans, sum);
 		}
 	}
-	for (int i = 0; i <= n - 4; ++i) {
+	for (int i = 0; i <= n - 4; ++i) {	// 4 x 1
 		for (int j = 0; j < m; ++j) {
 			int sum = 0;
 			for (int k = i; k < i + 4; ++k) {
